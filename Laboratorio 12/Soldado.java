@@ -41,6 +41,16 @@ public class Soldado {
 		nivelVida = 0;
 	}
 	//sets
+	public void setAtaque(int ataque){
+        nivelAtaque = ataque;
+    }
+      
+	public void setDefensa(int defensa){
+        nivelDefensa = defensa;
+    }
+    public void setNivVidAct(int vida){
+        vidaActual = vida;
+    }
 	public void setVidaActual(int a) {
 		nivelVida = a;
 	}
@@ -50,7 +60,7 @@ public class Soldado {
     public void setCol(char n){
         posCol = n;
     }
-	//tres constructores sobrecargados
+	//cuatro constructores sobrecargados
 	public Soldado(String nom, char fig){
         nombre = nom;
         nivelAtaque = (int)(Math.random() * 5 + 1);
@@ -89,6 +99,19 @@ public class Soldado {
         vive = vivir;
         posFila = pFila;
         posCol = pCol;
+        figura = fig;
+    }
+    public Soldado(String nom, int nivelVida,char fig){
+        nombre = nom;
+        nivelAtaque = (int)(Math.random() * 5 + 1);
+        nivelDefensa = (int)(Math.random() * 5 + 1);
+        this.nivelVida = nivelVida;
+        vidaActual = nivelVida;
+        velocidad = 0;
+        actitud = "Defensiva";
+        vive = true;
+        posFila = (int)(Math.random() * 10 + 1);
+        posCol = numCol();
         figura = fig;
     }
     public static char numCol(){
